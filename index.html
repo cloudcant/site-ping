@@ -1,0 +1,37 @@
+
+<html>
+    <head>
+      <meta http-equiv="refresh" content="1.5">
+        <title>Ping</title>
+
+        <style>
+            ul span {
+                color: green;
+            }
+        </style>
+    </head>
+	<body>
+        <script src="ping.js" type="text/javascript"></script>
+
+        <ul>
+          <span id="ping">
+        </ul>
+    
+
+        <script>
+        var p = new Ping();
+          
+           p.ping("https://c10udz.github.io", function(err, data) {
+        // Also display error if err is returned.
+        if (err) {
+          console.log("error loading resource")
+          data = data + " " + err;
+        }
+        document.getElementById("ping").innerHTML = data;
+        });
+       
+
+        
+    </script>
+    </body>
+</html>
